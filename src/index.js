@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
-import { createStore } from "redux";
-import rootReducer from "./store/reducer";
+import { createStore, combineReducers } from "redux";
 import { Provider } from "react-redux";
+import mangoReducer from "./store/reducers/mangoReducer";
+import cucumberReducer from "./store/reducers/cucumberReducer";
+
+const rootReducer = combineReducers({
+  mg: mangoReducer,
+  cu: cucumberReducer,
+})
 
 const store = createStore(rootReducer);
 

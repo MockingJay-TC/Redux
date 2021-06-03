@@ -1,16 +1,18 @@
+import * as actiontype from "../action"
+
 const initialState ={
     mangoes: 0
 }
 
-const rootReducer = (state = initialState, action) =>{
+const mangoReducer = (state = initialState, action) =>{
     switch(action.type){
-        case 'ADDMANGOES':
+        case actiontype.ADDMANGOES:
             return {
                 ...state,
                 mangoes: state.mangoes + action.value
             }
         
-        case 'SUBTRACTMANGOES':
+        case actiontype.SUBTRACTMANGOES:
             return{
                 ...state,
                 mangoes: state.mangoes - action.value
@@ -20,4 +22,4 @@ const rootReducer = (state = initialState, action) =>{
     }
 
 }
-export default rootReducer;
+export default mangoReducer;
